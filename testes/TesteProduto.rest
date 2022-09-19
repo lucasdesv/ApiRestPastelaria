@@ -1,28 +1,27 @@
-GET http://localhost:8000/produto/0 HTTP/1.1
 
-### Verbo POST – adicionar
-POST http://127.0.0.1:8000/produto/4 HTTP/1.1
-content-type: application/json
+### Verbo GET – listar
+GET http://localhost:8000/produto/ HTTP/1.1
 
-{
-    "nome" : "Abc da Silva",
-    "descricao" : "toppp",
-    "telefone" : "49988234567",
-    "foto" : "image.png",
-    "valor_unitario" : 1
-}
-
-### Verbo PUT – atualiza
-PUT http://127.0.0.1:8000/produto/2 HTTP/1.1
-content-type: application/json
+### Verbo POST - adicionar
+POST http://localhost:8000/produto/ HTTP/1.1
+content-type : application/json
 
 {
-    "nome" : "Abc da Silva",
-    "descricao" : "toppp",
-    "telefone" : "49988234567",
-    "foto" : "image.png",
-    "valor_unitario" : 2
+    "nome" : "Pastel frango",
+    "descricao" : "Pastel frango feito pela Kevelin",
+    "valor_unitario" : 15.5
 }
 
-### Verbo DELETE - excluir
-DELETE http://127.0.0.1:8000/produto/3 HTTP/1.1
+### Verbo PUT - atualiza
+PUT http://127.0.0.1:8000/produto/1 HTTP/1.1
+content-type : application/json
+
+{
+    "nome" : "Pastel carne",
+    "descricao" : "Pastel carne feito pela Kevelin",
+    "valor_unitario" : 17.5
+}
+
+### Verbo DELETE 
+DELETE  http://127.0.0.1:8000/produto/1 HTTP/1.1
+content-type : application/json

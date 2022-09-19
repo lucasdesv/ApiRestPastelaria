@@ -1,32 +1,32 @@
-GET http://localhost:8000/cliente/0 HTTP/1.1
+### Verbo GET – listar
+GET http://localhost:8000/cliente/ HTTP/1.1
 
-### Verbo POST – adicionar
-POST http://127.0.0.1:8000/cliente/4 HTTP/1.1
-content-type: application/json
-
-{
-    "nome" : "Abc da Silva",
-    "cpf" : "01923874656",
-    "telefone" : "49988234567",
-    "senha" : "bolinhas",
-    "matricula" : "12345",
-    "compra_fiado" : 1,    
-    "dia_fiado": 10
-}
-
-### Verbo PUT – atualiza
-PUT http://127.0.0.1:8000/cliente/2 HTTP/1.1
-content-type: application/json
+### Verbo POST - adicionar
+POST http://localhost:8000/cliente/ HTTP/1.1
+content-type : application/json
 
 {
-    "nome" : "Abc da Silva",
-    "cpf" : "01923874656",
-    "telefone" : "49988234567",
-    "senha" : "bolinhas",
-    "matricula" : "12345",
-    "compra_fiado" : 1,    
-    "dia_fiado": 10
+    "nome" : "Lucas Vieira",
+    "cpf" : "35425252",
+    "telefone" : "49982345567",
+    "compra_fiado" : 1,
+    "dia_fiado" : 20,
+    "senha" : "abc"
 }
 
-### Verbo DELETE - excluir
-DELETE http://127.0.0.1:8000/cliente/3 HTTP/1.1
+### Verbo PUT - atualiza
+PUT http://127.0.0.1:8000/cliente/1 HTTP/1.1
+content-type : application/json
+
+{
+    "nome" : "Topserson da Silva" ,
+    "cpf" : "325252" ,
+    "telefone" : "49982345567",
+    "compra_fiado" : false,
+    "dia_fiado" : 20,
+    "senha" : "abcBolinhas"
+}
+
+### Verbo DELETE 
+DELETE  http://127.0.0.1:8000/cliente/1 HTTP/1.1
+content-type : application/json
