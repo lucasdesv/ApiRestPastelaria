@@ -1,3 +1,5 @@
+from fastapi import Depends
+import security
 import db
 from mod_produto.ProdutoModel import ProdutoDB
 
@@ -15,6 +17,7 @@ class Produto(BaseModel):
     valor_unitario: float
 
 # Criar os endpoints de produto: GET, POST, PUT, DELETE
+router = APIRouter( dependencies=[Depends(security.verify_token), Depends(security.verify_key)] )
 
 
 @router.get("/produto/", tags=["produto"])

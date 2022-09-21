@@ -1,11 +1,11 @@
+from fastapi import Depends
+import security
 import db
 from mod_cliente.ClienteModel import ClienteDB
-
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-router = APIRouter()
-
+router = APIRouter( dependencies=[Depends(security.verify_token), Depends(security.verify_key)] )
 
 class Cliente(BaseModel):
     codigo: int = None
@@ -17,7 +17,6 @@ class Cliente(BaseModel):
     senha: str = None
 
 # Criar os endpoints de cliente: GET, POST, PUT, DELETE
-
 
 @router.get("/cliente/", tags=["cliente"])
 def get_cliente():
@@ -33,7 +32,7 @@ def get_cliente():
 
 
 @router.get("/cliente/{id}", tags=["cliente"])
-def get_cliente(id: int):
+def get_cliente():
     try:
         session = db.Session()
         # busca um com filtro
