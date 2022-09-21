@@ -6,8 +6,6 @@ from mod_produto.ProdutoModel import ProdutoDB
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-router = APIRouter()
-
 
 class Produto(BaseModel):
     codigo: int = None
